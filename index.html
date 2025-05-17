@@ -13,14 +13,26 @@
       background-color: #f7f7f8;
       color: #111;
     }
-    .container {
+
+    .main-container {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 4rem 1rem;
+      align-items: flex-start;
+      padding: 4rem 2rem;
+      flex-wrap: wrap;
+      gap: 4rem;
     }
+
+    .left-panel, .right-panel {
+      flex: 1 1 400px;
+      max-width: 500px;
+    }
+
+    .left-panel {
+      text-align: center;
+    }
+
     h1 {
       font-size: 1rem;
       letter-spacing: 0.1em;
@@ -28,21 +40,22 @@
       text-transform: uppercase;
       margin-bottom: 2rem;
     }
+
     .ai-box {
       background-color: white;
       border-radius: 1rem;
       padding: 1.5rem;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
       margin-bottom: 2rem;
-      max-width: 500px;
     }
+
     .buttons {
       display: flex;
       gap: 1rem;
-      margin-bottom: 3rem;
       flex-wrap: wrap;
       justify-content: center;
     }
+
     .button {
       background-color: #d0ddd1;
       border: none;
@@ -55,25 +68,29 @@
       font-weight: 500;
       transition: all 0.2s ease;
     }
+
     .button:hover {
       background-color: #c4d5c7;
     }
-    .right-panel {
-      max-width: 600px;
-      padding: 0 1.5rem;
-      text-align: left;
-      margin: 0 auto;
-    }
+
     .right-panel p {
       font-size: 1.1rem;
       line-height: 1.8;
       margin-bottom: 1.5rem;
     }
+
     footer {
       text-align: right;
-      padding: 2rem 1rem;
+      padding: 2rem;
       font-weight: 600;
     }
+
+    .pdf-section {
+      max-width: 800px;
+      margin: 3rem auto;
+      text-align: center;
+    }
+
     iframe {
       width: 100%;
       height: 600px;
@@ -83,16 +100,17 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Bienvenue, comment puis-je vous aider aujourd'hui ?</h1>
-    <div class="ai-box">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/2048px-ChatGPT_logo.svg.png" alt="IA Chat" width="40" height="40" style="margin-bottom:1rem;">
-      <input type="text" placeholder="Poser une question" style="width: 100%; padding: 0.75rem; border-radius: 0.75rem; border: 1px solid #ccc; font-size: 1rem;" disabled>
-    </div>
-
-    <div class="buttons">
-      <a href="#cv-resume" class="button">CV format résumé</a>
-      <a href="#cv-detaille" class="button">CV format détaillé</a>
+  <div class="main-container">
+    <div class="left-panel">
+      <h1>Bienvenue, comment puis-je vous aider aujourd'hui ?</h1>
+      <div class="ai-box">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/2048px-ChatGPT_logo.svg.png" alt="IA Chat" width="40" height="40" style="margin-bottom:1rem;">
+        <input type="text" placeholder="Poser une question" style="width: 100%; padding: 0.75rem; border-radius: 0.75rem; border: 1px solid #ccc; font-size: 1rem;" disabled>
+      </div>
+      <div class="buttons">
+        <a href="#cv-resume" class="button">CV format résumé</a>
+        <a href="#cv-detaille" class="button">CV format détaillé</a>
+      </div>
     </div>
 
     <div class="right-panel">
@@ -100,17 +118,17 @@
       <p>Je conçois et pilote des solutions utiles, durables, et alignées avec les besoins réels des organisations.</p>
       <p>Ma pratique repose sur l’équilibre entre structure, sens et impact.</p>
     </div>
-
-    <footer>Mélanie Rondeau</footer>
   </div>
 
-  <div id="cv-resume" class="container">
+  <footer>Mélanie Rondeau</footer>
+
+  <div id="cv-resume" class="pdf-section">
     <h2>CV format résumé</h2>
     <iframe src="CV-resume.pdf"></iframe>
     <a class="button" href="CV-resume.pdf" download>Télécharger le CV résumé</a>
   </div>
 
-  <div id="cv-detaille" class="container">
+  <div id="cv-detaille" class="pdf-section">
     <h2>CV format détaillé</h2>
     <iframe src="CV-detaille.pdf"></iframe>
     <a class="button" href="CV-detaille.pdf" download>Télécharger le CV détaillé</a>
