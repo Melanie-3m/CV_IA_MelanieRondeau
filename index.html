@@ -1,69 +1,119 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CV IA - Mélanie</title>
-<style>
-body {
-margin: 0;
-padding: 0;
-font-family: "Helvetica Neue", sans-serif;
-background: #fafafa;
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-color: #111;
-text-align: center;
-}
-
-.container {
-max-width: 500px;
-padding: 2rem;
-}
-
-h1 {
-font-size: 1.8rem;
-margin-bottom: 1.5rem;
-}
-
-.button-list {
-display: flex;
-flex-direction: column;
-gap: 1rem;
-}
-
-.button {
-padding: 1rem;
-background-color: #000;
-color: #fff;
-border: none;
-border-radius: 6px;
-font-size: 1rem;
-text-decoration: none;
-transition: background 0.2s ease;
-}
-
-.button:hover {
-background-color: #333;
-}
-
-@media (max-width: 600px) {
-h1 {
-font-size: 1.5rem;
-}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mélanie Rondeau - CV IA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f7f7f8;
+      color: #111;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+    h1 {
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      font-weight: 400;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+    .ai-box {
+      background-color: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+    .buttons {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .button {
+      background-color: #d0ddd1;
+      border: none;
+      padding: 0.75rem 1.25rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      font-size: 1rem;
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .button:hover {
+      background-color: #c4d5c7;
+    }
+    .right-panel {
+      max-width: 600px;
+      padding: 0 1.5rem;
+      text-align: left;
+      margin: 0 auto;
+    }
+    .right-panel p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    footer {
+      text-align: right;
+      padding: 2rem 1rem;
+      font-weight: 600;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-<h1>Bienvenue dans mon espace CV interactif</h1>
-<div class="button-list">
-<a href="CV-MelanieRondeau.pdf" class="button" download>Télécharger CV résumé</a>
-<a href="CV-detaille.pdf" class="button" download>Télécharger CV détaillé</a>
-<a href="https://chat.openai.com/gpts" class="button">Accéder à mon assistant IA</a>
-</div>
-</div>
+  <div class="container">
+    <h1>Bienvenue, comment puis-je vous aider aujourd'hui ?</h1>
+    <div class="ai-box">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/2048px-ChatGPT_logo.svg.png" alt="IA Chat" width="40" height="40" style="margin-bottom:1rem;">
+      <input type="text" placeholder="Poser une question" style="width: 100%; padding: 0.75rem; border-radius: 0.75rem; border: 1px solid #ccc; font-size: 1rem;" disabled>
+    </div>
+
+    <div class="buttons">
+      <a href="#cv-resume" class="button">CV format résumé</a>
+      <a href="#cv-detaille" class="button">CV format détaillé</a>
+    </div>
+
+    <div class="right-panel">
+      <p>Avec près de 10 ans d’expérience dans la data et l’IA, j’interviens sur des projets à fort enjeu stratégique, de la gouvernance à la mise en œuvre opérationnelle.</p>
+      <p>Je conçois et pilote des solutions utiles, durables, et alignées avec les besoins réels des organisations.</p>
+      <p>Ma pratique repose sur l’équilibre entre structure, sens et impact.</p>
+    </div>
+
+    <footer>Mélanie Rondeau</footer>
+  </div>
+
+  <div id="cv-resume" class="container">
+    <h2>CV format résumé</h2>
+    <iframe src="CV-resume.pdf"></iframe>
+    <a class="button" href="CV-resume.pdf" download>Télécharger le CV résumé</a>
+  </div>
+
+  <div id="cv-detaille" class="container">
+    <h2>CV format détaillé</h2>
+    <iframe src="CV-detaille.pdf"></iframe>
+    <a class="button" href="CV-detaille.pdf" download>Télécharger le CV détaillé</a>
+  </div>
 </body>
 </html>
